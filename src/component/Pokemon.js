@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandFist, faSkull } from "@fortawesome/free-solid-svg-icons";
 import { faGratipay } from "@fortawesome/free-brands-svg-icons";
+import AttackIcon from './AttackIcon';
 
 const Pokemon = ({ name, image, life, hits, addOneHit, attaques }) => {
   return (
@@ -16,6 +17,9 @@ const Pokemon = ({ name, image, life, hits, addOneHit, attaques }) => {
             onClick={() => addOneHit(name, index)}
           >
             {attaque.name}
+            <li key={index} className="list-group-item">
+              <AttackIcon attackType={attaque.type} />
+            </li>
           </button>
         ))}
       </div>
